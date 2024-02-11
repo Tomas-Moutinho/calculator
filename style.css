@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightyellow;
+    padding: 0px;
+    margin: 0px;
+}
+
+#calculator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+}
+
+
+#display{
+    display: flex;
+}
+
+#input{
+    display: flex;
+    flex-direction: column;
+}
+
+#eraseSection{
+    display: flex;
+}
+
+#calculation{
+    display: flex;
+}
+
+#numbers{
+    display: flex;
+}
