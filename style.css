@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 body{
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color: tomato;
+    background-color: rgb(196, 167, 114);
     padding: 0px;
-    margin: 0px;
+    margin: 0px;   
+}
+
+#title{
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 25px;
+    color: aliceblue;
 }
 
 #calculator{
@@ -14,13 +26,13 @@ body{
     justify-content: center;
     align-items: center;
     width: 600px;
-    height: 600px;
+    height: 500px;
 }
-
 
 #display{
     display: flex;
-    font-size: 40px;
+    font-size: 50px;
+    margin-bottom: 50px;
 }
 
 #input{
@@ -30,10 +42,31 @@ body{
 
 #eraseSection{
     display: flex;
+    padding-bottom: 15px;
 }
+
+#eraseSection button{
+    color: ;
+    background-color: tomato;
+    margin-left: 90px;
+    width: 180px;
+}
+
+#clearBtn button{
+    background-color: tomato;
+    margin-left: 8px;
+    margin-right: 0px;
+}
+
 
 #calculation{
     display: flex;
+    justify-content: center;
+}
+
+#calculation button{
+    display: flex;
+    width: 100px;
 }
 
 #numbers{
@@ -43,4 +76,24 @@ body{
 button{
     font-size: 35px ;
     padding: 10px;
+    border-radius: 5px;
+    margin: 8px;
+    background-color: aliceblue;
+    color: rgb(12, 12, 12);
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    padding: 20px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    width: 1880px;
+}
+
+footer img{
+    padding-left: 20px;
 }

@@ -23,7 +23,7 @@ let secondNumber = "";
 let operator = null;
 let displayMem = "";
 
-
+/////////////////////////////////////BUTTONS/////////////////////////////////////////////////
 btnClear.addEventListener("click", () => {
     clear();
 })
@@ -92,8 +92,57 @@ btnDivide.addEventListener("click", () => {
     append("÷");
 })
 
+btnEqual.addEventListener("click", () => {
+    let result;
+ 
+    result = calculateOperation(displayMem);
+    displayMem = result;
+    displayScreen.textContent = displayMem;
+})
+
 
 /////////////////////////////////////LOGIC FUNCTIONS/////////////////////////////////////////
+function calculateOperation(str)
+{
+    for(let i = 0; i < str.length; i++)
+    {
+        if(str.at(i) === "+" || str.at(i) === "-" || str.at(i) === "×" || str.at(i) === "÷")
+        {
+            for(let j = i + 1; j < str.length; j++)
+            {
+                if(str.at(j) === "+" || str.at(j) === "-" || str.at(j) === "×" || str.at(j) === "÷")
+                {
+                    let subStr = str.substring(0, j);
+                    subStr = strToResult(subStr);
+                    str = str.substring(j, str.length);
+                    str = subStr + str;
+                    console.log(str);
+                }
+            }
+        }
+
+    }
+    return str = strToResult(str);
+}
+
+function strToResult(str)
+{
+    let result;
+
+    for(let i = 0; i < str.length; i++)
+    {
+        if(str.at(i) === "+" || str.at(i) === "-" || str.at(i) === "×" || str.at(i) === "÷")
+        {
+            firstNumber = str.substring(0, i);
+            operator = str.at(i);
+            secondNumber = str.substring(i + 1, str.length);
+            result = operate(firstNumber, operator, secondNumber)
+            //console.log(result);
+            return result.toString();
+        }
+    }
+
+}
 
 function append(character)
 {
@@ -113,13 +162,12 @@ function deleteLastCharacter()
     displayScreen.textContent = displayMem;
 }
 
-
-
-
 /////////////////////////////////////OPERATION FUNCTIONS/////////////////////////////////////
-
-function operate(number1, number2, operator)
+function operate(number1, operator, number2)
 {
+    number1 = parseFloat(number1);
+    number2 = parseFloat(number2);
+
     switch(operator)
     {
         case "+":
@@ -128,10 +176,10 @@ function operate(number1, number2, operator)
         case "-":
         return subtract(number1,number2);
 
-        case "*":
+        case "×":
         return multiply(number1,number2);
 
-        case "/":
+        case "÷":
         return divide(number1,number2);
     }
 }
