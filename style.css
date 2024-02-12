@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: lightyellow;
+    background-color: tomato;
     padding: 0px;
     margin: 0px;
 }
@@ -20,6 +20,7 @@ body{
 
 #display{
     display: flex;
+    font-size: 40px;
 }
 
 #input{
@@ -37,4 +38,9 @@ body{
 
 #numbers{
     display: flex;
+}
+
+button{
+    font-size: 35px ;
+    padding: 10px;
 }
